@@ -1,0 +1,95 @@
+# =============================================================================
+# Fuelix Mistral-7B Multi-Adapter Training Configuration
+# =============================================================================
+
+base_model:
+  name: "mistralai/Mistral-7B-Instruct-v0.2"
+  load_in_4bit: true
+  bnb_4bit_compute_dtype: "float16"
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_use_double_quant: true
+  device_map: "auto"
+
+lora:
+  r: 16
+  lora_alpha: 32
+  lora_dropout: 0.05
+  bias: "none"
+  task_type: "CAUSAL_LM"
+  target_modules:
+    - "q_proj"
+    - "k_proj"
+    - "v_proj"
+    - "o_proj"
+    - "gate_proj"
+    - "up_proj"
+    - "down_proj"
+
+training:
+  batch_size: 1
+  gradient_accumulation_steps: 16
+  learning_rate: 1e-4
+  num_train_epochs: 1
+  max_seq_length: 384
+  warmup_ratio: 0.1
+  lr_scheduler_type: "linear"
+  optim: "paged_adamw_8bit"
+  fp16: true
+  logging_steps: 10
+  save_steps: 100
+  eval_steps: 100
+  save_total_limit: 1
+  dataloader_num_workers: 0
+  report_to: "none"
+
+generation:
+  max_new_tokens: 256
+  temperature: 0.7
+  top_p: 0.9
+  do_sample: true
+  repetition_penalty: 1.1
+
+adapters:
+  coach:
+    output_dir: "../../backend/models/coach_adapter"
+    dataset_path: "datasets/coach_dataset.jsonl"
+    target_samples: 5000000
+    description: "Hybrid athlete general coaching, strength programming, boxing, endurance"
+  nutrition:
+    output_dir: "../../backend/models/nutrition_adapter"
+    dataset_path: "datasets/nutrition_dataset.jsonl"
+    target_samples: 2000000
+    description: "Nutrition analysis, meal planning, macros, micronutrients"
+  recovery:
+    output_dir: "../../backend/models/recovery_adapter"
+    dataset_path: "datasets/recovery_dataset.jsonl"
+    target_samples: 1500000
+    description: "Recovery optimization, sleep, HRV, fatigue interpretation"
+  medical:
+    output_dir: "../../backend/models/medical_adapter"
+    dataset_path: "datasets/medical_dataset.jsonl"
+    target_samples: 1000000
+    description: "Lab value explanations, health risk flags, athlete medical context"
+
+system_prompt: >
+  You are Fuelix AI, an expert hybrid athlete coach specializing in strength training,
+  boxing performance, endurance development, nutrition analysis, and recovery optimization.
+  You provide accurate, evidence-based coaching insights based on the athlete's real data.
+  You never invent metrics or prescribe medical treatments. If context is insufficient,
+  respond with 'insufficient_data'.
+
+dataset:
+  instruction_format: true
+  shuffle: true
+  train_split: 0.95
+  val_split: 0.05
+  seed: 42
+  output_dir: "datasets"
+
+public_datasets:
+  - name: "tatsu-lab/alpaca"
+    split: "train"
+    filter_keywords: ["health", "fitness", "nutrition", "exercise", "training", "recovery"]
+  - name: "OpenAssistant/oasst1"
+    split: "train"
+    filter_keywords: ["health", "fitness", "nutrition", "workout", "diet"]

@@ -1,0 +1,36 @@
+# =============================================================================
+# Fuelix ML Training Requirements
+# Install with: pip install -r requirements_ml.txt
+#
+# NOTE: These are ONLY needed for training/fine-tuning.
+#       The backend server does NOT require all of these.
+#       For inference only, you only need:
+#         transformers, peft, bitsandbytes, torch, accelerate
+# =============================================================================
+
+# ── Core training stack ──────────────────────────────────────────────────────
+torch>=2.1.0
+transformers>=4.38.0
+peft>=0.9.0
+trl>=0.8.0
+bitsandbytes>=0.43.0
+accelerate>=0.27.0
+
+# ── Dataset handling ─────────────────────────────────────────────────────────
+datasets>=2.18.0
+huggingface_hub>=0.21.0
+
+# ── Utilities ────────────────────────────────────────────────────────────────
+pyyaml>=6.0
+numpy>=1.24.0
+scipy>=1.11.0
+tqdm>=4.66.0
+
+# ── Evaluation ───────────────────────────────────────────────────────────────
+evaluate>=0.4.0
+
+# ── Optional: Weights & Biases experiment tracking ───────────────────────────
+# wandb>=0.16.0
+
+# ── Optional: Flash Attention 2 (significant speedup on A100/H100 GPUs) ──────
+# flash-attn>=2.5.0   # requires CUDA 11.6+ and GCC 9+

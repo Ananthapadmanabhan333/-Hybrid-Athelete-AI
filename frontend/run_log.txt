@@ -1,0 +1,110 @@
+Launching lib\main.dart on Chrome in debug mode...
+Waiting for connection from debug service on Chrome...             23.1s
+This app is linked to the debug service: ws://127.0.0.1:58675/a-V6E4rmuzU=/ws
+Debug service listening on ws://127.0.0.1:58675/a-V6E4rmuzU=/ws
+
+Flutter run key commands.
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on Chrome is available at: http://127.0.0.1:58675/a-V6E4rmuzU=
+The Flutter DevTools debugger and profiler on Chrome is available at: http://127.0.0.1:9101?uri=http://127.0.0.1:58675/a-V6E4rmuzU=
+Network Error: ClientException: Failed to fetch, uri=http://localhost:8000/api/v1/ai-orchestrator/dashboard-payload
+--- V5 SUMMARY RESPONSE ---
+{}
+══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+The following _TypeError was thrown building DashboardScreen(dirty, dependencies:
+[InheritedCupertinoTheme, _InheritedTheme, _LocalizationsScope-[GlobalKey#28927]], state:
+_DashboardScreenState#2ab5d):
+TypeError: null: type 'Null' is not a subtype of type 'num'
+
+The relevant error-causing widget was:
+  DashboardScreen
+  DashboardScreen:file:///C:/Users/Ananthapadmanabhan/Desktop/fuelix/frontend/lib/features/auth/login_screen.dart:31:57
+
+When the exception was thrown, this was the stack:
+dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 266:3       throw_
+dart-sdk/lib/_internal/js_dev_runtime/private/profile.dart 117:39                 _asNum
+package:frontend/features/dashboard/dashboard_screen.dart 223:77                  <fn>
+package:frontend/features/dashboard/dashboard_screen.dart 183:19                  [_buildHomeView]
+package:frontend/features/dashboard/dashboard_screen.dart 110:7                   build
+package:flutter/src/widgets/framework.dart 5823:27                                build
+package:flutter/src/widgets/framework.dart 5715:15                                performRebuild
+package:flutter/src/widgets/framework.dart 5874:11                                performRebuild
+package:flutter/src/widgets/framework.dart 5427:7                                 rebuild
+package:flutter/src/widgets/framework.dart 2694:14                                [_tryRebuild]
+package:flutter/src/widgets/framework.dart 2752:11                                [_flushDirtyElements]
+package:flutter/src/widgets/framework.dart 3056:17                                buildScope
+package:flutter/src/widgets/binding.dart 1240:9                                   drawFrame
+package:flutter/src/rendering/binding.dart 495:5                                  [_handlePersistentFrameCallback]
+dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 117:77  tear
+package:flutter/src/scheduler/binding.dart 1438:7                                 [_invokeFrameCallback]
+package:flutter/src/scheduler/binding.dart 1351:9                                 handleDrawFrame
+package:flutter/src/scheduler/binding.dart 1204:5                                 [_handleDrawFrame]
+dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 117:77  tear
+lib/_engine/engine/platform_dispatcher.dart 1312:5                                invoke
+lib/_engine/engine/platform_dispatcher.dart 255:5                                 invokeOnDrawFrame
+lib/_engine/engine/frame_service.dart 189:32                                      [_renderFrame]
+lib/_engine/engine/frame_service.dart 101:9                                       <fn>
+dart-sdk/lib/async/zone.dart 1849:54                                              runUnary
+dart-sdk/lib/async/zone.dart 1804:26                                              <fn>
+dart-sdk/lib/_internal/js_dev_runtime/patch/js_allow_interop_patch.dart 224:27    _callDartFunctionFast1
+
+════════════════════════════════════════════════════════════════════════════════════════════════════
+Another exception was thrown: TypeError: null: type 'Null' is not a subtype of type 'num'
+Another exception was thrown: HTTP request failed, statusCode: 0, https://i.pravatar.cc/150?u=a042581f4e29026704d
+
+Performing hot restart...                                          618ms
+Restarted application in 619ms.
+--- V5 SUMMARY RESPONSE ---
+{}
+Network Error: ClientException: Failed to fetch, uri=http://localhost:8000/api/v1/ai-orchestrator/dashboard-payload
+══╡ EXCEPTION CAUGHT BY IMAGE RESOURCE SERVICE ╞════════════════════════════════════════════════════
+The following NetworkImageLoadException was thrown resolving an image stream completer:
+HTTP request failed, statusCode: 0, https://i.pravatar.cc/150?u=a042581f4e29026704d
+
+When the exception was thrown, this was the stack
+
+Image provider: NetworkImage("https://i.pravatar.cc/150?u=a042581f4e29026704d", scale: 1.0)
+Image key: NetworkImage("https://i.pravatar.cc/150?u=a042581f4e29026704d", scale: 1.0)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Performing hot restart...                                          541ms
+Restarted application in 541ms.
+--- V5 SUMMARY RESPONSE ---
+{}
+Network Error: ClientException: Failed to fetch, uri=http://localhost:8000/api/v1/ai-orchestrator/dashboard-payload
+══╡ EXCEPTION CAUGHT BY IMAGE RESOURCE SERVICE ╞════════════════════════════════════════════════════
+The following NetworkImageLoadException was thrown resolving an image stream completer:
+HTTP request failed, statusCode: 0, https://i.pravatar.cc/150?u=a042581f4e29026704d
+
+When the exception was thrown, this was the stack
+
+Image provider: NetworkImage("https://i.pravatar.cc/150?u=a042581f4e29026704d", scale: 1.0)
+Image key: NetworkImage("https://i.pravatar.cc/150?u=a042581f4e29026704d", scale: 1.0)
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Performing hot restart...                                           4.9s
+Restarted application in 4,927ms.
+--- V5 SUMMARY RESPONSE ---
+{}
+Network Error: ClientException: Failed to fetch, uri=http://localhost:8000/api/v1/ai-orchestrator/dashboard-payload
+
+Performing hot restart...                                          382ms
+Restarted application in 382ms.
+--- V5 SUMMARY RESPONSE ---
+{priority_action: Maintain current training intensity., summary: {tdee: 2500, burnout_risk: 0, projections: [], body_quality: 0, recovery_score: 0}, health_alerts: []}
+
+Performing hot restart...                                        2,054ms
+Restarted application in 2,059ms.
+--- V5 SUMMARY RESPONSE ---
+{priority_action: Maintain current training intensity., summary: {tdee: 2500, burnout_risk: 0, projections: [], body_quality: 0, recovery_score: 0}, health_alerts: []}
+
+Performing hot restart...                                        1,187ms
+Restarted application in 1,189ms.
+--- V5 SUMMARY RESPONSE ---
+{priority_action: Maintain current training intensity., summary: {tdee: 2500, burnout_risk: 0, projections: [], body_quality: 0, recovery_score: 0}, health_alerts: []}
+Application finished.

@@ -1,0 +1,57 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15-alpine
+    container_name: fuelix_db
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-leakfitness}
+    ports:
+      - "5432:5432"
+    volumes:
+      - fuelix_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-postgres} -d ${POSTGRES_DB:-leakfitness}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build: ./backend
+    container_name: fuelix_backend
+    restart: always
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - POSTGRES_SERVER=db
+      - POSTGRES_USER=${POSTGRES_USER:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+      - POSTGRES_DB=${POSTGRES_DB:-leakfitness}
+      - SQLALCHEMY_DATABASE_URI=postgresql://${POSTGRES_USER:-postgres}:${POSTGRES_PASSWORD:-changeme}@db:5432/${POSTGRES_DB:-leakfitness}
+      - SECRET_KEY=${SECRET_KEY:-your-super-secret-key-change-me-in-production}
+      - BACKEND_CORS_ORIGINS=["https://fuelix.com", "https://www.fuelix.com", "http://localhost"]
+    expose:
+      - "8000"
+
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        # Define base URL. Nginx reverse proxies /api/ to the backend container over port 80 proxy pass.
+        # But if Flutter web loads in browser, the browser resolves relative paths directly from the hostname.
+        # Nginx is serving Flutter web at /, so API calls can be routed. 
+        # For cross-origin or independent deployments, set as full domain.
+        - API_URL=${API_URL:-http://localhost/api/v1}
+    container_name: fuelix_frontend
+    restart: always
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+
+volumes:
+  fuelix_postgres_data:

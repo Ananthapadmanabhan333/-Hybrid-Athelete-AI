@@ -1,0 +1,99 @@
+Compiling lib\main.dart for the Web...                          
+Target dart2js failed: ProcessException: Process exited abnormally with exit code 1:
+lib/features/body_progress/service.dart:4:8:
+Error: Error when reading 'lib/core/api_config.dart': Error reading 'lib/core/api_config.dart'  (The system cannot find the file specified.
+)
+import '../../core/api_config.dart';
+       ^
+lib/features/nutrition_v2/service.dart:4:8:
+Error: Error when reading 'lib/core/api_config.dart': Error reading 'lib/core/api_config.dart'  (The system cannot find the file specified.
+)
+import '../../core/api_config.dart';
+       ^
+lib/features/recovery_v3/service.dart:4:8:
+Error: Error when reading 'lib/core/api_config.dart': Error reading 'lib/core/api_config.dart'  (The system cannot find the file specified.
+)
+import '../../core/api_config.dart';
+       ^
+lib/features/dashboard/dashboard_screen.dart:287:10:
+Error: A function expression can't have a name.
+  Widget _buildAthleteStats() {
+         ^^^^^^^^^^^^^^^^^^
+lib/features/dashboard/dashboard_screen.dart:312:11:
+Error: Expected ',' before this.
+          Text("EXTENDED FEATURES", style: Theme.of(context).textTheme.titleLarge),
+          ^^^^
+lib/features/body_progress/service.dart:14:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'BodyProgressService'.
+ - 'BodyProgressService' is from 'package:frontend/features/body_progress/service.dart' ('lib/features/body_progress/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/body/charts'),
+                   ^^^^^^^^^
+lib/features/body_progress/service.dart:31:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'BodyProgressService'.
+ - 'BodyProgressService' is from 'package:frontend/features/body_progress/service.dart' ('lib/features/body_progress/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/body/log-weight'),
+                   ^^^^^^^^^
+lib/features/nutrition_v2/service.dart:14:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'NutritionServiceV2'.
+ - 'NutritionServiceV2' is from 'package:frontend/features/nutrition_v2/service.dart' ('lib/features/nutrition_v2/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/nutrition/v2/monthly-summary'),
+                   ^^^^^^^^^
+lib/features/nutrition_v2/service.dart:31:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'NutritionServiceV2'.
+ - 'NutritionServiceV2' is from 'package:frontend/features/nutrition_v2/service.dart' ('lib/features/nutrition_v2/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/nutrition/v2/insights'),
+                   ^^^^^^^^^
+lib/features/recovery_v3/service.dart:14:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'RecoveryServiceV3'.
+ - 'RecoveryServiceV3' is from 'package:frontend/features/recovery_v3/service.dart' ('lib/features/recovery_v3/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/recovery/v3/today'),
+                   ^^^^^^^^^
+lib/features/recovery_v3/service.dart:31:20:
+Error: The getter 'ApiConfig' isn't defined for the class 'RecoveryServiceV3'.
+ - 'RecoveryServiceV3' is from 'package:frontend/features/recovery_v3/service.dart' ('lib/features/recovery_v3/service.dart').
+      Uri.parse('${ApiConfig.baseUrl}/recovery/v3/log'),
+                   ^^^^^^^^^
+Error: Compilation failed.
+  Command: C:\Users\Ananthapadmanabhan\Downloads\flutter_windows_3.32.8-stable\flutter\bin\cache\dart-sdk\bin\dart.exe compile js --platform-binaries=C:\Users\Ananthapadmanabhan\Downloads\flutter_windows_3.32.8-stable\flutter\bin\cache\flutter_web_sdk\kernel --invoker=flutter_tool -Ddart.vm.product=true -DFLUTTER_VERSION=3.32.8 -DFLUTTER_CHANNEL=stable -DFLUTTER_GIT_URL=https://github.com/flutter/flutter.git -DFLUTTER_FRAMEWORK_REVISION=edada7c56e -DFLUTTER_ENGINE_REVISION=ef0cd00091 -DFLUTTER_DART_VERSION=3.8.1 -DFLUTTER_WEB_USE_SKIA=true -DFLUTTER_WEB_USE_SKWASM=false -DFLUTTER_WEB_CANVASKIT_URL=https://www.gstatic.com/flutter-canvaskit/ef0cd000916d64fa0c5d09cc809fa7ad244a5767/ --native-null-assertions --no-source-maps -o C:\Users\Ananthapadmanabhan\Desktop\fuelix\frontend\.dart_tool\flutter_build\6d8f2edac1d30ceb60e60a2a6410afe3\app.dill --packages=C:\Users\Ananthapadmanabhan\Desktop\fuelix\frontend\.dart_tool\package_config.json --cfe-only C:\Users\Ananthapadmanabhan\Desktop\fuelix\frontend\.dart_tool\flutter_build\6d8f2edac1d30ceb60e60a2a6410afe3\main.dart
+#0      RunResult.throwException (package:flutter_tools/src/base/process.dart:118:5)
+#1      _DefaultProcessUtils.run (package:flutter_tools/src/base/process.dart:344:19)
+<asynchronous suspension>
+#2      Dart2JSTarget.build (package:flutter_tools/src/build_system/targets/web.dart:201:5)
+<asynchronous suspension>
+#3      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:873:9)
+<asynchronous suspension>
+#4      Future.wait.<anonymous closure> (dart:async/future.dart:525:21)
+<asynchronous suspension>
+#5      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:811:32)
+<asynchronous suspension>
+#6      Future.wait.<anonymous closure> (dart:async/future.dart:525:21)
+<asynchronous suspension>
+#7      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:811:32)
+<asynchronous suspension>
+#8      FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:629:16)
+<asynchronous suspension>
+#9      WebBuilder.buildWeb (package:flutter_tools/src/web/compile.dart:91:34)
+<asynchronous suspension>
+#10     BuildWebCommand.runCommand (package:flutter_tools/src/commands/build_web.dart:246:5)
+<asynchronous suspension>
+#11     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1563:27)
+<asynchronous suspension>
+#12     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#13     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+<asynchronous suspension>
+#14     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:494:9)
+<asynchronous suspension>
+#15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#17     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+<asynchronous suspension>
+#18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#19     main (package:flutter_tools/executable.dart:102:3)
+<asynchronous suspension>
+
+Compiling lib\main.dart for the Web...                             15.4s
+Error: Failed to compile application for the Web.

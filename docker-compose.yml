@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: fuelix_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+    environment:
+      - SQLALCHEMY_DATABASE_URI=sqlite:///./fuelix.db
+      # Add other env vars here
+    restart: always
+
+  frontend:
+    build: ./frontend
+    container_name: fuelix_frontend
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always

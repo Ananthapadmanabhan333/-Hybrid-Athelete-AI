@@ -1,0 +1,18 @@
+fastapi
+uvicorn
+gunicorn
+argon2-cffi
+pydantic
+pydantic-settings
+sqlalchemy
+sqlmodel
+psycopg2-binary
+alembic
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+# For AI
+numpy
+pandas
+email-validator
+google-generativeai

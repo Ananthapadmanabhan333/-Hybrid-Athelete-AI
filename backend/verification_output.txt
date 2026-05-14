@@ -1,0 +1,17 @@
+Testing Strength Workout Generation...
+✅ Generated 10 exercises!
+Workout Title: Pro Full Body - Intermediate
+
+Exercises:
+1. Dynamic Warmup Sequence (1 sets x 5-8 min)
+2. Tricep Dips (4 sets x 5-6)
+3. Barbell Bench Press (3 sets x 8-12)
+4. Viking Press (3 sets x 8-10)
+5. Leg Curl (3 sets x 10-15)
+6. Reverse Pec Deck (3 sets x 10-15)
+7. Weighted Russian Twist (3 sets x 10-15)
+8. Tricep Kickback (3 sets x 10-15)
+9. Plank (3 sets x 45-60s)
+10. Side Plank (3 sets x 30-45s)
+
+✅ SUCCESS: Workout contains significantly more exercises (Target >= 10)
