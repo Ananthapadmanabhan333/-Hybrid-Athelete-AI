@@ -1,5 +1,5 @@
 from typing import Optional
-from datetime import date
+from datetime import date, datetime
 from pydantic import BaseModel, EmailStr
 from app.models.user import ActivityLevel
 
@@ -28,7 +28,7 @@ class UserUpdate(UserBase):
 
 class UserInDBBase(UserBase):
     id: Optional[int] = None
-    created_at: Optional[date] = None
+    created_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True

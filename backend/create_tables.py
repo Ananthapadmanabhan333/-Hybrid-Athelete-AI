@@ -17,7 +17,7 @@ def create_tables():
     """Create all tables in the database."""
     print("Creating database tables...")
     Base.metadata.create_all(bind=engine)
-    print("✅ All tables created successfully!")
+    print("All tables created successfully!")
     print("\nTables created:")
     print("  - users")
     print("  - athlete_state")

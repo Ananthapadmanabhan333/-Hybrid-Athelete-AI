@@ -184,7 +184,7 @@ def seed_comprehensive_data():
     db.add_all(tasks)
 
     db.commit()
-    print("✅ All Comprehensive Data Successfully Seeded!")
+    print("All Comprehensive Data Successfully Seeded!")
     db.close()
 
 if __name__ == "__main__":
