@@ -27,7 +27,6 @@ graph TD
 
     %% Components
     A["📱 Flutter Mobile/Web App"] :::client
-    B["🌐 Modern HTML5/JS Landing Page"] :::client
     C["🔒 Nginx Reverse Proxy (Port 80)"] :::proxy
     
     subgraph FastAPI_Core ["FastAPI Core Platform"]
@@ -48,7 +47,6 @@ graph TD
 
     %% Connections
     A -->|HTTPS / REST API| C
-    B -->|Static Requests| C
     C -->|Reverse Proxy /api/v1| D
     
     D --> E
@@ -92,7 +90,6 @@ At the heart of Fuelix is a cluster of high-performance analytics engines design
 | Component | Technology | Description |
 | :--- | :--- | :--- |
 | **Frontend UI** | **Flutter (Dart)** | Cross-platform (iOS, Android, Web) compiled UI, leveraging the `Provider` pattern for state management. |
-| **Landing Web** | **HTML5 / Vanilla CSS / JS** | High-performance, SEO-optimized landing page featuring premium CSS styling, auth overlays, and fluid micro-animations. |
 | **Backend API** | **FastAPI (Python)** | High-throughput, asynchronous web server framework utilizing Pydantic schemas and SQLAlchemy ORM. |
 | **Databases** | **PostgreSQL & SQLite** | Scalable relational storage mapping detailed profiles, exercises, nutritional logs, and chats. |
 | **Dockerization** | **Nginx & Docker Compose** | Orchestrated production runtime featuring Nginx reverse-proxies routing both static frontend assets and API requests seamlessly. |
@@ -125,10 +122,6 @@ fuelix/
 │   ├── web/                               # Flutter Web deployment wrappers
 │   ├── nginx.conf                         # Production Nginx reverse-proxy configuration
 │   └── Dockerfile                         # Flutter-web compiler & static server image
-├── landing/                               # Dynamic, lightweight client marketing/auth page
-│   ├── index.html                         # Beautiful structure and layouts
-│   ├── styles.css                         # Modern styling and custom animations
-│   └── script.js                          # Auth modal flows and client-side validation
 ├── ml/
 │   └── fuelix_training/
 │       ├── dataset_builder.py             # Compiles synthetic samples
